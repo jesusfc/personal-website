@@ -1,171 +1,95 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jesús Fernández Caraballo</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 800px;
-            width: 100%;
-            padding: 50px;
-            text-align: center;
-        }
-
-        .profile-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #667eea;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        h1 {
-            color: #333;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            color: #667eea;
-            font-size: 1.3em;
-            margin-bottom: 30px;
-            font-weight: 500;
-        }
-
-        .bio {
-            color: #666;
-            line-height: 1.8;
-            font-size: 1.1em;
-            margin-bottom: 40px;
-            text-align: left;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .social-links a {
-            display: inline-block;
-            padding: 12px 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            font-weight: 500;
-        }
-
-        .social-links a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .skills {
-            margin-top: 40px;
-            text-align: left;
-        }
-
-        .skills h2 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 1.8em;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .skill-tag {
-            background: #f0f0f0;
-            padding: 8px 20px;
-            border-radius: 20px;
-            color: #667eea;
-            font-weight: 500;
-            border: 2px solid #667eea;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 30px 20px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            .subtitle {
-                font-size: 1.1em;
-            }
-
-            .profile-photo {
-                width: 150px;
-                height: 150px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Jesús Fernández Caraballo. Desarrollador backend especializado en Java, Spring Boot y microservicios.">
+<meta name="theme-color" content="#f5f5ef">
+<title>Jesús Fernández Caraballo · Backend Developer</title>
+<style>
+:root{--paper:#f5f5ef;--ink:#202b28;--muted:#5d6963;--green:#245b47;--line:#d8ded5}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:min(1160px,calc(100% - 96px));margin:auto}
+header{display:flex;justify-content:space-between;align-items:center;padding:30px 0;border-bottom:1px solid var(--line);gap:24px}
+.logo{text-decoration:none;font-size:23px;font-weight:750;letter-spacing:-1px}
+.logo span{color:var(--green)}
+nav{display:flex;gap:30px;font-size:14px}
+nav a{text-decoration:none}
+nav a:hover{color:var(--green);text-decoration:underline;text-underline-offset:6px}
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:80px;align-items:center;padding:88px 0 80px}
+.eyebrow{display:flex;align-items:center;gap:10px;font:600 12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin:0 0 26px}
+.eyebrow::before{content:"";width:7px;height:7px;background:var(--green);border-radius:50%;flex-shrink:0}
+h1{font-size:clamp(42px,5.3vw,72px);line-height:1.04;letter-spacing:-3.5px;font-weight:650;margin:0 0 27px}
+h1 span{color:var(--green)}
+.role{font-size:clamp(19px,2vw,24px);line-height:1.5;font-weight:500;margin:0 0 18px}
+.intro{color:var(--muted);font-size:17px;line-height:1.8;max-width:470px;margin:0}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:25px;min-height:49px;padding:13px 21px;border:1px solid var(--green);border-radius:6px;text-decoration:none;font-size:14px;font-weight:600;transition:background .2s,transform .2s}
+.button.primary{color:white;background:var(--green)}
+.button:hover{background:#e2e9df;transform:translateY(-2px)}
+.button.primary:hover{background:#193e31}
+.portrait{margin:0;position:relative;padding:0 17px 17px 0}
+.portrait::before{content:"";position:absolute;inset:22px 0 0 22px;background:#dee6db;border-radius:120px 12px 12px 12px}
+.portrait img{display:block;position:relative;width:100%;height:460px;object-fit:cover;object-position:center;border-radius:120px 12px 12px 12px;background:#dee6db}
+.portrait figcaption{position:absolute;bottom:36px;left:20px;right:37px;padding:16px 19px;background:var(--paper);border-radius:5px;display:flex;justify-content:space-between;gap:10px;align-items:center;font:12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace}
+.portrait figcaption span:last-child{color:var(--green)}
+.expertise{border-top:1px solid var(--line);padding:34px 0 42px;display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:start}
+.section-label{font:12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin:9px 0}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tag{font-size:14px;padding:9px 16px;border:1px solid var(--line);border-radius:5px}
+.contact{display:flex;justify-content:space-between;align-items:center;gap:30px;padding:42px 0;border-top:1px solid var(--line)}
+.contact h2{font-size:29px;letter-spacing:-1px;margin:0 0 9px;font-weight:600}
+.contact p{color:var(--muted);margin:0;line-height:1.6}
+.contact>a{text-underline-offset:6px;text-decoration-thickness:1px;overflow-wrap:anywhere}
+footer{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding:25px 0 32px;color:var(--muted);font-size:12px;line-height:1.6}
+.footer-links{display:flex;gap:22px}
+.footer-links a{text-decoration:none}
+a:focus-visible{outline:3px solid #457957;outline-offset:6px}
+.skip{position:absolute;left:16px;top:-100px;background:var(--paper);padding:12px;z-index:10}
+.skip:focus{top:12px}
+@media(min-width:1440px){.hero{padding-top:100px;padding-bottom:100px}}
+@media(max-width:850px){.wrap{width:calc(100% - 48px)}.hero{gap:35px;padding:60px 0}.portrait img{height:380px}h1{letter-spacing:-2px}.portrait figcaption{font-size:10px;padding:12px}.expertise{grid-template-columns:1fr 2fr}}
+@media(max-width:620px){.wrap{width:calc(100% - 40px)}header{padding:22px 0}nav{gap:18px;font-size:13px}.hero{grid-template-columns:1fr;gap:38px;padding:48px 0 40px}h1{font-size:49px;letter-spacing:-2.5px}.eyebrow{font-size:11px;margin-bottom:22px}.portrait{max-width:420px;width:100%;justify-self:center}.portrait img{height:390px}.portrait figcaption{font-size:12px}.expertise{grid-template-columns:1fr;gap:16px;padding:25px 0 30px}.contact{align-items:flex-start;flex-direction:column;padding:30px 0;gap:20px}.contact h2{font-size:27px}footer{flex-direction:column;gap:10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}.button:hover{transform:none}}
+</style>
 </head>
 <body>
-    <div class="container">
-        <!-- Foto personal - Reemplaza 'https://via.placeholder.com/200' con la ruta de tu foto -->
-        <img src="/imag/IMG_0812.JPG" alt="Foto Personal" class="profile-photo">
-        
-        <h1>Jesús Fdez. Caraballo</h1>
-        <p class="subtitle">Java Backend Developer | Spring Boot & Microservices</p>
-        
-        <div class="bio">
-            <p>
-                ¡Hola! Bienvenido a mi página personal...... aún en construcción!!!!
-            </p>
-            <p style="margin-top: 15px;">
-
-            </p>
-        </div>
-
-        <!--div class="skills">
-            <h2>Habilidades</h2>
-            <div class="skill-tags">
-                <span class="skill-tag"Java</span>
-                <span class="skill-tag">SpringBook</span>
-                <span class="skill-tag">React</span>
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">Git</span>
-            </div>
-        </div-->
-
-        <div class="social-links">
-            <a href="https://github.com/jesusfc" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/jesus-fdez-caraballo" target="_blank">LinkedIn</a>
-            <a href="mailto:jfcaraballo@gmail.com">Contacto</a>
-        </div>
-    </div>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="wrap">
+<header>
+<a class="logo" href="./" aria-label="Jesús Fernández Caraballo, inicio">jesusfc<span>.</span></a>
+<nav aria-label="Navegación principal"><a href="#tecnologias">Tecnologías</a><a href="#contacto">Contacto <span aria-hidden="true">↗</span></a></nav>
+</header>
+<main id="contenido">
+<section class="hero" aria-labelledby="nombre">
+<div>
+<p class="eyebrow">Java Backend Developer</p>
+<h1 id="nombre">Jesús Fernández<br><span>Caraballo.</span></h1>
+<p class="role">Java, Spring Boot<br>y microservicios.</p>
+<p class="intro">¡Hola! Bienvenido a mi espacio personal. Soy desarrollador backend y aquí comparto mi perfil y mi conexión con el mundo del código.</p>
+<div class="actions">
+<a class="button primary" href="mailto:jfcaraballo@gmail.com">Hablemos <span aria-hidden="true">↗</span></a>
+<a class="button" href="https://github.com/jesusfc" target="_blank" rel="noopener noreferrer">Ver GitHub <span aria-hidden="true">↗</span></a>
+</div>
+</div>
+<figure class="portrait">
+<img src="/imag/IMG_0812.JPG" alt="Retrato de Jesús Fernández Caraballo" fetchpriority="high">
+<figcaption><span>Detrás del código.</span><span aria-hidden="true">&lt; / &gt;</span></figcaption>
+</figure>
+</section>
+<section class="expertise" id="tecnologias" aria-labelledby="tech-title">
+<h2 class="section-label" id="tech-title">Mi enfoque técnico</h2>
+<div class="tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Microservicios</span></div>
+</section>
+<section class="contact" id="contacto" aria-labelledby="contact-title">
+<div><h2 id="contact-title">Sigamos en contacto.</h2><p>Puedes escribirme o encontrarme en mis redes.</p></div>
+<a href="mailto:jfcaraballo@gmail.com">jfcaraballo@gmail.com <span aria-hidden="true">↗</span></a>
+</section>
+</main>
+<footer><span>Jesús Fernández Caraballo · Espacio personal en construcción</span><div class="footer-links"><a href="https://github.com/jesusfc" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/jesus-fdez-caraballo" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></footer>
+</div>
 </body>
 </html>
